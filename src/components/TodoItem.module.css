@@ -29,6 +29,16 @@
 .title {
   font-size: 16px;
   color: #333;
+  cursor: pointer;
+}
+
+.editInput {
+  flex: 1;
+  padding: 4px 8px;
+  font-size: 16px;
+  border: 2px solid #0070f3;
+  border-radius: 4px;
+  outline: none;
 }
 
 .completed {

@@ -29,6 +29,19 @@ export async function toggleTodo(id: string) {
   revalidatePath("/");
 }
 
+export async function editTodo(id: string, title: string) {
+  if (!title || title.trim() === "") {
+    return;
+  }
+
+  await prisma.todo.update({
+    where: { id },
+    data: { title: title.trim() },
+  });
+
+  revalidatePath("/");
+}
+
 export async function deleteTodo(id: string) {
   await prisma.todo.delete({ where: { id } });
   revalidatePath("/");
